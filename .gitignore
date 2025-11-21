@@ -20,3 +20,8 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+.vs
+src/Dotnet/SSE.Backend/obj
+src/Client/Sse.Client/obj
+src/Client/Sse.Client/bin
+src/Dotnet/SSE.Backend/bin

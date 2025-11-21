@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/docs/">
+    <File Path="architecture.md" />
+    <File Path="troubleshooting.md" />
+    <File Path="when-to-use-sse.md" />
+  </Folder>
+  <Folder Name="/src/" />
+  <Folder Name="/src/clients/">
+    <Project Path="src/Client/Sse.Client/SSE.Client.csproj" Id="15b8f95e-9911-4bcf-bb7c-c65ba205d49c" />
+  </Folder>
+  <Folder Name="/src/DotNet/">
+    <Project Path="src/Dotnet/SSE.Backend/SSE.Backend.csproj" Id="a547d1ce-a634-4e00-b23b-8cc178fda573" />
+  </Folder>
+</Solution>
