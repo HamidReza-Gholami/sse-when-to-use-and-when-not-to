@@ -1,8 +1,10 @@
 <Solution>
   <Folder Name="/docs/">
-    <File Path="architecture.md" />
     <File Path="troubleshooting.md" />
     <File Path="when-to-use-sse.md" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
   </Folder>
   <Folder Name="/src/" />
   <Folder Name="/src/clients/">
