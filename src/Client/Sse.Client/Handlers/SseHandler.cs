@@ -14,16 +14,18 @@ namespace SSE.Client.Handlers
             context.Response.Headers.Add("Connection", "keep-alive");
             context.Response.Headers.Add("X-Accel-Buffering", "no");
 
+            /// enable Event Identification and Resumption
+            string lastEventId = context.Request.Headers["Last-Event-ID"];
 
             // initial message so client enters SSE mode immediately
             await context.Response.WriteAsync("retry: 2000\n\n", cancellationToken);
             await context.Response.Body.FlushAsync(cancellationToken);
 
-            await foreach (var message in sseService.SubscribeAsync(cancellationToken))
+            await foreach (var sseEvent in sseService.SubscribeAsync(lastEventId, cancellationToken))
             {
                 try
                 {
-                    await context.Response.WriteAsync($"data: {message}\n\n", cancellationToken);
+                    await context.Response.WriteAsync($"id: {sseEvent.Id}\ndata: {sseEvent.Data}\n\n", cancellationToken);
                     await context.Response.Body.FlushAsync(cancellationToken);
                 }
                 catch (OperationCanceledException)
